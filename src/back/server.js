@@ -8,7 +8,7 @@ const { PORT } = require('./config/config.js');
 
 const allowedUrlPath = {
   '/': path.resolve(__dirname, '..', 'front', 'index.html'),
-  '/script.js': path.resolve(__dirname, ' ', 'front', 'script.js'),
+  '/script.js': path.resolve(__dirname, '..', 'front', 'script.js'),
   '/style.css': path.resolve(__dirname, '..', 'front', 'style.css'),
 }
 
