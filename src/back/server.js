@@ -10,17 +10,21 @@ const allowedUrlPath = {
   '/': path.resolve(__dirname, '..', 'front', 'index.html'),
   '/script.js': path.resolve(__dirname, '..', 'front', 'script.js'),
   '/style.css': path.resolve(__dirname, '..', 'front', 'style.css'),
+  '/logo.png': path.resolve(__dirname, '..', 'res', 'logo.png'),
+  '/logo.ico': path.resolve(__dirname, '..', 'res', 'logo.ico'),
 }
 
 const mimeTypes = {
   'html': 'text/html',
   'css': 'text/css',
-  'js': 'application/javascript'
+  'js': 'application/javascript',
+  'png': 'image/png',
+  'ico': 'image/x-icon'
 };
 
 const readStatic = async (filePath) => {
   try {
-    const data = await fs.readFile(filePath, 'utf-8');
+    const data = await fs.readFile(filePath);
     return data;
   } catch (e) {
     console.log(e);
