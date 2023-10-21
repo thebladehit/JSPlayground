@@ -17,11 +17,22 @@ header img {
     margin-right: 10px;
 }
 
-#codeArea, #consoleArea {
-    width: 98%;
-    height: 300px;
+#codeArea{
+    width: 98.7%;
+    height: 350px;
     padding: 10px;
     margin: 20px 0;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    overflow: auto;
+    resize: none;
+}
+
+#consoleArea{
+    margin: 30px;
+    width: 97%;
+    height: 350px;
+    padding: 10px;
     border: 1px solid #ccc;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
     overflow: auto;

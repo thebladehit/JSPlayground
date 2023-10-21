@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (){
     const realConsole = console.log
 
-    const codeArea = document.getElementById("codeArea")
     const consoleArea = document.getElementById("consoleArea")
 
     console.log = function (msg){
@@ -9,28 +8,36 @@ document.addEventListener("DOMContentLoaded", function (){
         consoleArea.textContent += "Console: " + msg + "\n"
     }
 
+    const codeMirror = CodeMirror.fromTextArea(document.getElementById("codeArea"), {
+        mode: "javascript",
+        lineNumbers: true,
+        autoIndent: true,
+        autoCloseBrackets: true,
+        matchBrackets: true,
+    })
+
     const runBtn = document.getElementById("runButton")
     const clearCodeBtn = document.getElementById("clearCodeButton")
     const clearConsoleBtn = document.getElementById("clearConsoleButton")
 
     runBtn.addEventListener("click", function () {
-        const code = codeArea.value.toString()
-
+        const code = codeMirror.getValue()
         try {
-            const result = new Function(code);
+            const result = new Function(code)
             result()
         } catch (error) {
-            console.log("Error:", error);
+            console.log("Error:", error)
 
-            consoleArea.textContent = "Console:\nError: " + error;
+            consoleArea.textContent = "Console:\nError: " + error + "\n"
         }
     })
 
     clearCodeBtn.addEventListener("click", function(){
-       codeArea.value= ""
+        codeMirror.setValue("")
     })
 
     clearConsoleBtn.addEventListener("click", function (){
         consoleArea.textContent= ""
     })
+
 })
