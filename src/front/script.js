@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", function (){
     }
 
     const runBtn = document.getElementById("runButton")
-    const clearBtn = document.getElementById("clearButton")
+    const clearCodeBtn = document.getElementById("clearCodeButton")
+    const clearConsoleBtn = document.getElementById("clearConsoleButton")
 
     runBtn.addEventListener("click", function () {
         const code = codeArea.value.toString()
@@ -25,8 +26,11 @@ document.addEventListener("DOMContentLoaded", function (){
         }
     })
 
-    clearBtn.addEventListener("click", function(){
+    clearCodeBtn.addEventListener("click", function(){
        codeArea.value= ""
-       consoleArea.textContent= ""
+    })
+
+    clearConsoleBtn.addEventListener("click", function (){
+        consoleArea.textContent= ""
     })
 })
