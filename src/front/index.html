@@ -4,20 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Playground</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/matchbrackets.min.js"></script>
+
 </head>
 <body>
-<script src="script.js"></script>
 <header>
     <img src="/src/res/logo.jpg" alt="Логотип">
     <h1>JS Playground</h1>
-    <link rel="stylesheet" type="text/css" href="style.css">
 </header>
 
 <textarea id="codeArea" placeholder="Start typing your JS code here..."></textarea>
 
 <div class="button-container">
     <button id="runButton">Run</button>
-    <button id="clearButton">Clear</button>
+    <button id="clearCodeButton">Clear code area</button>
+    <button id="clearConsoleButton">Clear console</button>
 </div>
 
 <pre id="consoleArea"></pre>
@@ -25,5 +33,6 @@
 <footer>
     © 2023 JS Playground. All rights reserved.
 </footer>
+<script src="script.js"></script>
 </body>
 </html>
