@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function (){
         } catch (error) {
             console.log("Error:", error)
 
-            consoleArea.textContent = "Console:\nError: " + error + "\n"
+            consoleArea.textContent += "Console:\nError: " + error + "\n"
         }
     })
 
