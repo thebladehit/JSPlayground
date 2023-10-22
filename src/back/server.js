@@ -14,6 +14,8 @@ const allowedUrlPath = {
   '/logo.ico': path.resolve(__dirname, '..', 'res', 'logo.ico'),
 }
 
+const cache = {};
+
 const mimeTypes = {
   'html': 'text/html',
   'css': 'text/css',
@@ -38,7 +40,14 @@ const server = http.createServer(async (req, res) => {
     res.end('Not found');
     return;
   }
-  const data = await readStatic(filePath);
+  let data;
+  const cached = cache[req.url];
+  if (!cached) {
+    data = await readStatic(filePath);
+    cache[req.url] = data;
+  } else {
+    data = cached;
+  }
   let contentType;
   if (req.url === '/') {
     contentType = mimeTypes['html'];
