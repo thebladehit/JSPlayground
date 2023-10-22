@@ -32,6 +32,10 @@ document.addEventListener("DOMContentLoaded", function (){
         }
     })
 
+    codeMirror.on("inputRead", function(instance){
+        CodeMirror.commands.autocomplete(instance, null, {completeSingle: false})
+    })
+
     clearCodeBtn.addEventListener("click", function(){
         codeMirror.setValue("")
     })
