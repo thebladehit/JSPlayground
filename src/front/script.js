@@ -28,8 +28,12 @@ document.addEventListener("DOMContentLoaded", function (){
         } catch (error) {
             console.log("Error:", error)
 
-            consoleArea.textContent = "Console:\nError: " + error + "\n"
+            consoleArea.textContent += "Console:\nError: " + error + "\n"
         }
+    })
+
+    codeMirror.on("inputRead", function(instance){
+        CodeMirror.commands.autocomplete(instance, null, {completeSingle: false})
     })
 
     clearCodeBtn.addEventListener("click", function(){

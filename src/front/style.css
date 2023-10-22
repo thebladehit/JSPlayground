@@ -10,33 +10,37 @@ header {
     padding: 10px 20px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    height: 100px;
 }
 
 header img {
-    height: 40px;
+    height: 100%;
     margin-right: 10px;
 }
 
-#codeArea{
-    width: 98.7%;
-    height: 350px;
+#codeArea, #consoleArea {
+    width: calc(100% - 20px);
     padding: 10px;
-    margin: 20px 0;
-    border: 1px solid #ccc;
+    margin: 10px;
+    border: 1px solid black;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
     overflow: auto;
     resize: none;
+    box-sizing: border-box;
 }
 
-#consoleArea{
-    margin: 30px;
-    width: 97%;
+#codeArea {
     height: 350px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    overflow: auto;
-    resize: none;
+}
+
+.codeAreaContainer{
+    margin: 10px;
+    border: 1px solid black;
+}
+
+#consoleArea {
+    height: 320px;
 }
 
 footer {
@@ -46,47 +50,35 @@ footer {
     text-align: center;
     position: fixed;
     bottom: 0;
-    height: 5%;
+    height: 8vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
-.button-container{
+.button-container {
     text-align: center;
-}
-
-.button-container button {
-    margin: 5px;
+    padding: 10px 0;
 }
 
 button {
     background-color: black;
+    width: 200px;
+    height: 40px;
     border-radius: 4px;
     border-style: none;
-    box-sizing: border-box;
     color: #fff;
     cursor: pointer;
-    display: inline-block;
-    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
-    font-size: 16px;
     font-weight: 700;
     line-height: 1.5;
-    margin: 0;
-    max-width: none;
-    min-height: 44px;
-    min-width: 10px;
-    outline: none;
-    overflow: hidden;
-    padding: 9px 20px 8px;
-    position: relative;
+    padding: 9px 20px;
+    margin: 5px;
     text-align: center;
-    text-transform: none;
     user-select: none;
-    -webkit-user-select: none;
     touch-action: manipulation;
-    width: 10%;
+    transition: opacity 0.3s;
 }
 
 button:hover,
