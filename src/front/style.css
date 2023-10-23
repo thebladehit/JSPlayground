@@ -12,11 +12,62 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 100px;
+    position: relative;
+}
+
+.logo-container {
+    height: 200px;
+    flex-shrink: 0;
 }
 
 header img {
     height: 100%;
     margin-right: 10px;
+}
+
+.header-text {
+    position: absolute;
+    left: 50%;
+    color: #f2f2f2;
+    transform: translateX(-50%);
+}
+
+
+.settings-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.settings-button {
+    background-color: transparent;
+    color: #f2f2f2;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.settings-button:hover {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+.menu-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f2f2f2;
+    color: black;
+    min-width: 200px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.settings-menu:hover .menu-content {
+    display: block;
 }
 
 #codeArea, #consoleArea {
@@ -45,7 +96,7 @@ header img {
 
 footer {
     background-color: black;
-    color: #fff;
+    color: #f2f2f2;
     padding: 10px 20px;
     text-align: center;
     position: fixed;
@@ -63,13 +114,13 @@ footer {
     padding: 10px 0;
 }
 
-button {
+.clrBtn {
     background-color: black;
     width: 200px;
     height: 40px;
     border-radius: 4px;
     border-style: none;
-    color: #fff;
+    color: #f2f2f2;
     cursor: pointer;
     font-weight: 700;
     line-height: 1.5;
@@ -81,7 +132,7 @@ button {
     transition: opacity 0.3s;
 }
 
-button:hover,
-button:focus {
+.clrBtn:hover,
+.clrBtn:focus {
     opacity: .75;
 }

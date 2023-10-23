@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", function (){
+document.addEventListener("DOMContentLoaded", () => {
     const realConsole = console.log
 
     const consoleArea = document.getElementById("consoleArea")
 
-    console.log = function (msg){
+    console.log = (msg) => {
         realConsole(msg)
         consoleArea.textContent += "Console: " + msg + "\n"
     }
@@ -14,13 +14,37 @@ document.addEventListener("DOMContentLoaded", function (){
         autoIndent: true,
         autoCloseBrackets: true,
         matchBrackets: true,
+        theme: "default"
     })
+
+    const themeSelect = document.getElementById("themeSelect")
+    const autoCloseBrackets = document.getElementById("autoCloseBrackets")
+    const autoComplete = document.getElementById("autoComplete")
+    const showLineNumbers = document.getElementById("showLineNumbers")
+
+    themeSelect.addEventListener("change", () => {
+        codeMirror.setOption("theme", themeSelect.value)
+    })
+
+    autoCloseBrackets.addEventListener("change", () => {
+        codeMirror.setOption("autoCloseBrackets", autoCloseBrackets.checked)
+    })
+
+    showLineNumbers.addEventListener("change", () => {
+        codeMirror.setOption("lineNumbers", showLineNumbers.checked)
+    })
+
+    const toggleAutoComplete = () => codeMirror[autoComplete.checked ? 'on' : 'off']("inputRead", autoCompleteHandler);
+    const autoCompleteHandler = (instance) => CodeMirror.commands.autocomplete(instance, null, {completeSingle: false});
+
+    autoComplete.addEventListener("change", toggleAutoComplete);
+    toggleAutoComplete();
 
     const runBtn = document.getElementById("runButton")
     const clearCodeBtn = document.getElementById("clearCodeButton")
     const clearConsoleBtn = document.getElementById("clearConsoleButton")
 
-    runBtn.addEventListener("click", function () {
+    runBtn.addEventListener("click", () => {
         const code = codeMirror.getValue()
         try {
             const result = new Function(code)
@@ -32,15 +56,11 @@ document.addEventListener("DOMContentLoaded", function (){
         }
     })
 
-    codeMirror.on("inputRead", function(instance){
-        CodeMirror.commands.autocomplete(instance, null, {completeSingle: false})
-    })
-
-    clearCodeBtn.addEventListener("click", function(){
+    clearCodeBtn.addEventListener("click", () => {
         codeMirror.setValue("")
     })
 
-    clearConsoleBtn.addEventListener("click", function (){
+    clearConsoleBtn.addEventListener("click", () => {
         consoleArea.textContent= ""
     })
 
