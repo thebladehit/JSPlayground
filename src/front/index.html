@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/show-hint.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/eclipse.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/idea.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/juejin.min.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/closebrackets.min.js"></script>
@@ -35,20 +39,20 @@
             <div>
                 <label for="themeSelect">Theme:</label>
                 <select id="themeSelect">
-                    <option value="default">Default</option>
-                    <option value="ecpilse">Ecpilse</option>
+                    <option value="default" >Default</option>
+                    <option value="eclipse">Eclipse</option>
                     <option value="idea">Idea</option>
                     <option value="juejin">Juejin</option>
                 </select>
             </div>
             <div>
-                <label><input type="checkbox" id="autoCloseBrackets"> Auto close brackets</label>
+                <label><input type="checkbox" id="autoCloseBrackets" checked> Auto close brackets</label>
             </div>
             <div>
-                <label><input type="checkbox" id="autoComplete"> Auto complete</label>
+                <label><input type="checkbox" id="autoComplete" checked> Auto complete</label>
             </div>
             <div>
-                <label><input type="checkbox" id="showLineNumbers"> Show line numbers</label>
+                <label><input type="checkbox" id="showLineNumbers" checked> Show line numbers</label>
             </div>
         </div>
     </div>

@@ -14,7 +14,31 @@ document.addEventListener("DOMContentLoaded", function (){
         autoIndent: true,
         autoCloseBrackets: true,
         matchBrackets: true,
+        theme: "default"
     })
+
+    const themeSelect = document.getElementById("themeSelect")
+    const autoCloseBrackets = document.getElementById("autoCloseBrackets")
+    const autoComplete = document.getElementById("autoComplete")
+    const showLineNumbers = document.getElementById("showLineNumbers")
+
+    themeSelect.addEventListener("change", () => {
+        codeMirror.setOption("theme", themeSelect.value)
+    })
+
+    autoCloseBrackets.addEventListener("change", () => {
+        codeMirror.setOption("autoCloseBrackets", autoCloseBrackets.checked)
+    })
+
+    showLineNumbers.addEventListener("change", () => {
+        codeMirror.setOption("lineNumbers", showLineNumbers.checked)
+    })
+
+    const toggleAutoComplete = () => codeMirror[autoComplete.checked ? 'on' : 'off']("inputRead", autoCompleteHandler);
+    const autoCompleteHandler = (instance) => CodeMirror.commands.autocomplete(instance, null, {completeSingle: false});
+
+    autoComplete.addEventListener("change", toggleAutoComplete);
+    toggleAutoComplete();
 
     const runBtn = document.getElementById("runButton")
     const clearCodeBtn = document.getElementById("clearCodeButton")
@@ -30,10 +54,6 @@ document.addEventListener("DOMContentLoaded", function (){
 
             consoleArea.textContent += "Console:\nError: " + error + "\n"
         }
-    })
-
-    codeMirror.on("inputRead", function(instance){
-        CodeMirror.commands.autocomplete(instance, null, {completeSingle: false})
     })
 
     clearCodeBtn.addEventListener("click", function(){
