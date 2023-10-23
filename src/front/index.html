@@ -22,8 +22,37 @@
 </head>
 <body>
 <header>
-    <img src="logo.png" alt="logo">
-    <h1>JS Playground</h1>
+    <div class="logo-container">
+        <img src="logo.png" alt="logo">
+    </div>
+    <div class="header-text">
+        <h1>JS Playground</h1>
+    </div>
+
+    <div class="settings-menu">
+        <button class="settings-button">Settings</button>
+        <div class="menu-content">
+            <div>
+                <label for="themeSelect">Theme:</label>
+                <select id="themeSelect">
+                    <option value="default">Default</option>
+                    <option value="ecpilse">Ecpilse</option>
+                    <option value="idea">Idea</option>
+                    <option value="juejin">Juejin</option>
+                </select>
+            </div>
+            <div>
+                <label><input type="checkbox" id="autoCloseBrackets"> Auto close brackets</label>
+            </div>
+            <div>
+                <label><input type="checkbox" id="autoComplete"> Auto complete</label>
+            </div>
+            <div>
+                <label><input type="checkbox" id="showLineNumbers"> Show line numbers</label>
+            </div>
+        </div>
+    </div>
+
 </header>
 
 <div class="codeAreaContainer">
@@ -31,9 +60,9 @@
 </div>
 
 <div class="button-container">
-    <button id="runButton">Run</button>
-    <button id="clearCodeButton">Clear code area</button>
-    <button id="clearConsoleButton">Clear console</button>
+    <button class="clrBtn" id="runButton">Run</button>
+    <button class="clrBtn" id="clearCodeButton">Clear code area</button>
+    <button class="clrBtn" id="clearConsoleButton">Clear console</button>
 </div>
 
 <pre id="consoleArea"></pre>
