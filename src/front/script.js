@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", function (){
+document.addEventListener("DOMContentLoaded", () => {
     const realConsole = console.log
 
     const consoleArea = document.getElementById("consoleArea")
 
-    console.log = function (msg){
+    console.log = (msg) => {
         realConsole(msg)
         consoleArea.textContent += "Console: " + msg + "\n"
     }
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function (){
     const clearCodeBtn = document.getElementById("clearCodeButton")
     const clearConsoleBtn = document.getElementById("clearConsoleButton")
 
-    runBtn.addEventListener("click", function () {
+    runBtn.addEventListener("click", () => {
         const code = codeMirror.getValue()
         try {
             const result = new Function(code)
@@ -56,11 +56,11 @@ document.addEventListener("DOMContentLoaded", function (){
         }
     })
 
-    clearCodeBtn.addEventListener("click", function(){
+    clearCodeBtn.addEventListener("click", () => {
         codeMirror.setValue("")
     })
 
-    clearConsoleBtn.addEventListener("click", function (){
+    clearConsoleBtn.addEventListener("click", () => {
         consoleArea.textContent= ""
     })
 
