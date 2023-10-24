@@ -11,7 +11,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100px;
+    height: 75px;
     position: relative;
 }
 
@@ -74,7 +74,7 @@ header img {
     width: calc(100% - 20px);
     padding: 10px;
     margin: 10px;
-    border: 1px solid black;
+    border: 1px solid #a49f9f;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
     overflow: auto;
     resize: none;
@@ -87,26 +87,11 @@ header img {
 
 .codeAreaContainer{
     margin: 10px;
-    border: 1px solid black;
+    border: 1px solid #a49f9f;
 }
 
 #consoleArea {
     height: 320px;
-}
-
-footer {
-    background-color: black;
-    color: #f2f2f2;
-    padding: 10px 20px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    height: 8vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
 }
 
 .button-container {
@@ -135,4 +120,33 @@ footer {
 .clrBtn:hover,
 .clrBtn:focus {
     opacity: .75;
+}
+
+footer {
+    background-color: black;
+    color: #f2f2f2;
+    padding: 10px 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    height: 8vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.footer-gitIcon{
+    height: 100%;
+    justify-self: end;
+    margin-left: -5%;
+}
+
+.footer-text{
+    flex-grow: 1;
+}
+
+.footer-gitIcon img{
+    height: 100%;
 }
