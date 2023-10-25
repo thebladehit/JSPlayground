@@ -72,17 +72,17 @@ header img {
 
 #codeArea, #consoleArea {
     width: calc(100% - 20px);
-    padding: 10px;
-    margin: 10px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
     overflow: auto;
     resize: none;
+    font-size: 20px;
     box-sizing: border-box;
 }
 
 #consoleArea{
     border: 1px solid #a49f9f;
     box-sizing: border-box;
+    margin: 10px;
 }
 
 #codeArea {
@@ -177,4 +177,5 @@ footer {
 
 .CodeMirror {
     height: 100% !important;
+    font-size: 20px;
 }
