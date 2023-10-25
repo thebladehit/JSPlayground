@@ -64,4 +64,16 @@ document.addEventListener("DOMContentLoaded", () => {
         consoleArea.textContent= ""
     })
 
+    const orientationSelect = document.getElementById('orientationSelect');
+    const layoutContainer = document.querySelector('.layout-container');
+
+    orientationSelect.addEventListener('change', (e) => {
+        const selectedOrientation = e.target.value;
+        if (selectedOrientation === 'horizontal') {
+            layoutContainer.classList.remove('vertical');
+        } else if (selectedOrientation === 'vertical') {
+            layoutContainer.classList.add('vertical');
+        }
+    });
+
 })
