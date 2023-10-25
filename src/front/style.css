@@ -74,10 +74,14 @@ header img {
     width: calc(100% - 20px);
     padding: 10px;
     margin: 10px;
-    border: 1px solid #a49f9f;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
     overflow: auto;
     resize: none;
+    box-sizing: border-box;
+}
+
+#consoleArea{
+    border: 1px solid #a49f9f;
     box-sizing: border-box;
 }
 
@@ -88,6 +92,7 @@ header img {
 .codeAreaContainer{
     margin: 10px;
     border: 1px solid #a49f9f;
+    box-sizing: border-box;
 }
 
 #consoleArea {
@@ -149,4 +154,27 @@ footer {
 
 .footer-gitIcon img{
     height: 100%;
+}
+
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(85vh - 120px);
+}
+
+.layout-container.vertical {
+    flex-direction: row;
+}
+
+.codeAreaContainer, #consoleArea {
+    flex: 1;
+    overflow: auto;
+}
+
+.codeAreaContainer, #consoleArea {
+    height: 97%;
+}
+
+.CodeMirror {
+    height: 100% !important;
 }

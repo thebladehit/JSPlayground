@@ -37,6 +37,13 @@
         <button class="settings-button">Settings</button>
         <div class="menu-content">
             <div>
+                <label for="orientationSelect">Orientation:</label>
+                <select id="orientationSelect">
+                    <option value="horizontal" >Horizontal</option>
+                    <option value="vertical">Vertical</option>
+                </select>
+            </div>
+            <div>
                 <label for="themeSelect">Theme:</label>
                 <select id="themeSelect">
                     <option value="default" >Default</option>
@@ -59,8 +66,12 @@
 
 </header>
 
+
+<div class="layout-container">
 <div class="codeAreaContainer">
-<textarea id="codeArea" placeholder="Start typing your JS code here..."></textarea>
+    <textarea id="codeArea" placeholder="Start typing your JS code here..."></textarea>
+</div>
+<pre id="consoleArea"></pre>
 </div>
 
 <div class="button-container">
@@ -68,8 +79,6 @@
     <button class="clrBtn" id="clearCodeButton">Clear code area</button>
     <button class="clrBtn" id="clearConsoleButton">Clear console</button>
 </div>
-
-<pre id="consoleArea"></pre>
 
 <footer>
     <div class="footer-spacer"></div>
