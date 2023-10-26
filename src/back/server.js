@@ -1,8 +1,8 @@
 'use strict';
 
-const http = require('node:http');
-const fs = require('node:fs').promises;
-const path = require('node:path');
+const http = require('http');
+const fs = require('fs').promises;
+const path = require('path');
 
 const { PORT } = require('./config/config.js');
 
