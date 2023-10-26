@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/eclipse.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/idea.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/juejin.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/dracula.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
@@ -39,8 +40,9 @@
             <div>
                 <label for="orientationSelect">Orientation:</label>
                 <select id="orientationSelect">
-                    <option value="horizontal" >Horizontal</option>
-                    <option value="vertical">Vertical</option>
+                    <option value="vertical">50/50 Vertical</option>
+                    <option value="horizontal" >50/50 Horizontal</option>
+                    <option value="oneandhalf" >70/30 Vertical</option>
                 </select>
             </div>
             <div>
@@ -67,14 +69,14 @@
 </header>
 
 
-<div class="layout-container">
+<div class="layout-container vertical">
 <div class="codeAreaContainer">
     <textarea id="codeArea" placeholder="Start typing your JS code here..."></textarea>
 </div>
     <pre id="consoleArea"></pre>
 </div>
 
-<div class="button-container">
+<div class="button-container vertical">
     <button class="clrBtn" id="runButton">Run</button>
     <button class="clrBtn" id="clearCodeButton">Clear code area</button>
     <button class="clrBtn" id="clearConsoleButton">Clear console</button>
