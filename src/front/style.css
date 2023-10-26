@@ -145,11 +145,18 @@ footer {
 .footer-gitIcon{
     height: 100%;
     justify-self: end;
-    margin-left: -5%;
 }
 
 .footer-text{
     flex-grow: 1;
+}
+
+.footer-banka{
+    height: 100%;
+}
+
+.footer-banka img{
+    height: 100%;
 }
 
 .footer-gitIcon img{
