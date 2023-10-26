@@ -13,6 +13,7 @@ const allowedUrlPath = {
   '/logo.png': path.resolve(__dirname, '..', 'res', 'logo.png'),
   '/logo.ico': path.resolve(__dirname, '..', 'res', 'logo.ico'),
   '/gitIcon.png': path.resolve(__dirname, '..', 'res', 'gitIcon.png'),
+  '/monoBanka.png': path.resolve(__dirname, '..', 'res', 'monoBanka.png'),
 }
 
 const cache = {};
