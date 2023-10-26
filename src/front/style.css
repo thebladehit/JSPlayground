@@ -4,6 +4,8 @@ body {
     padding: 0;
 }
 
+/*header*/
+
 header {
     background-color: black;
     color: #fff;
@@ -32,7 +34,6 @@ header img {
     transform: translateX(-50%);
 }
 
-
 .settings-menu {
     position: relative;
     display: inline-block;
@@ -60,7 +61,7 @@ header img {
     right: 0;
     background-color: #f2f2f2;
     color: black;
-    min-width: 200px;
+    min-width: 250px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     padding: 12px 16px;
     z-index: 1;
@@ -70,39 +71,102 @@ header img {
     display: block;
 }
 
-#codeArea, #consoleArea {
-    width: calc(100% - 20px);
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    overflow: auto;
-    resize: none;
-    font-size: 20px;
-    box-sizing: border-box;
+.button-container {
+    padding: 10px;
+    text-align: center;
+}
+
+/*fields*/
+
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(85vh - 120px);
+    margin: 10px 10px 0 10px;
+}
+
+.codeAreaContainer, #consoleArea {
+    margin: 0;
+    padding: 0;
 }
 
 #consoleArea{
     border: 1px solid #a49f9f;
     box-sizing: border-box;
-    margin: 10px;
-}
-
-#codeArea {
-    height: 350px;
+    padding: 10px;
+    height: 320px;
+    width: 100%;
+    font-size: 20px;
 }
 
 .codeAreaContainer{
-    margin: 10px;
     border: 1px solid #a49f9f;
     box-sizing: border-box;
 }
 
-#consoleArea {
-    height: 320px;
+.layout-container.vertical {
+    flex-direction: row;
 }
 
-.button-container {
-    text-align: center;
-    padding: 10px 0;
+.codeAreaContainer, #consoleArea {
+    flex: 1;
+    overflow: auto;
 }
+
+.codeAreaContainer, #consoleArea {
+    height: 100%;
+}
+
+.CodeMirror {
+    height: 100% !important;
+    width: 100% !important;
+    font-size: 20px;
+}
+
+.layout-container.horizontal .codeAreaContainer {
+    box-sizing: border-box;
+}
+
+.layout-container.horizontal #consoleArea {
+    margin-top: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.layout-container.vertical .codeAreaContainer {
+    flex: 1.021;
+    margin-right: 5px;
+    box-sizing: border-box;
+}
+
+.layout-container.vertical #consoleArea {
+    margin-left: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.layout-container.oneandhalf {
+    flex-direction: row;
+}
+
+.layout-container.oneandhalf .codeAreaContainer {
+    flex: 1.5;
+    margin-right: 5px;
+    box-sizing: border-box;
+}
+
+.layout-container.oneandhalf #consoleArea {
+    flex: 1;
+    margin-left: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#orientationSelect{
+    margin: 5px;
+}
+
+/*buttons*/
 
 .clrBtn {
     background-color: black;
@@ -126,6 +190,21 @@ header img {
 .clrBtn:focus {
     opacity: .75;
 }
+
+.button-container.horizontal {
+    text-align: center;
+}
+
+.button-container.vertical {
+    text-align: center;
+}
+
+.button-container.oneandhalf {
+    text-align: left;
+    padding-left: 13%;
+}
+
+/*footer*/
 
 footer {
     background-color: black;
@@ -161,28 +240,4 @@ footer {
 
 .footer-gitIcon img{
     height: 100%;
-}
-
-.layout-container {
-    display: flex;
-    flex-direction: column;
-    height: calc(85vh - 120px);
-}
-
-.layout-container.vertical {
-    flex-direction: row;
-}
-
-.codeAreaContainer, #consoleArea {
-    flex: 1;
-    overflow: auto;
-}
-
-.codeAreaContainer, #consoleArea {
-    height: 97%;
-}
-
-.CodeMirror {
-    height: 100% !important;
-    font-size: 20px;
 }

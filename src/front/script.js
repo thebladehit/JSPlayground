@@ -66,14 +66,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const orientationSelect = document.getElementById('orientationSelect');
     const layoutContainer = document.querySelector('.layout-container');
+    const buttonContainer = document.querySelector('.button-container')
 
     orientationSelect.addEventListener('change', (e) => {
         const selectedOrientation = e.target.value;
-        if (selectedOrientation === 'horizontal') {
-            layoutContainer.classList.remove('vertical');
-        } else if (selectedOrientation === 'vertical') {
-            layoutContainer.classList.add('vertical');
-        }
+
+        ['vertical', 'horizontal', 'oneandhalf'].forEach((orientation) => {
+            const isCurrentOrientation = orientation === selectedOrientation;
+
+            layoutContainer.classList.toggle(orientation, isCurrentOrientation);
+            buttonContainer.classList.toggle(orientation, isCurrentOrientation);
+        });
     });
+
 
 })
