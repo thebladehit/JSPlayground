@@ -24,13 +24,33 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/closebrackets.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/matchbrackets.min.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/javascript-hint.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/show-hint.min.js"></script>
-    </head>
-    <body>
-        <header>
-            <div class="logo-container">
-                <img src="logo.png" alt="logo" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/matchbrackets.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/javascript-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/show-hint.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="logo-container">
+        <img src="logo.png" alt="logo">
+    </div>
+    <div class="header-text">
+        <h1>JS Playground</h1>
+    </div>
+
+    <div class="settings-menu">
+        <button class="settings-button">Settings</button>
+        <div class="menu-content">
+            <div>
+                <label for="orientationSelect">Orientation:</label>
+                <select id="orientationSelect">
+                    <option value="vertical">50/50 Vertical</option>
+                    <option value="horizontal" >50/50 Horizontal</option>
+                    <option value="oneandhalf" >70/30 Vertical</option>
+                </select>
             </div>
             <div class="header-text">
                 <h1>JS Playground</h1>
