@@ -8,11 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
         consoleArea.textContent += "Console: " + msg + "\n"
     }
 
+    const autoCloseBracketsSetting = localStorage.getItem('autoCloseBrackets');
+    const isAutoCloseBracketsEnabled = autoCloseBracketsSetting !== 'false';
+
     const codeMirror = CodeMirror.fromTextArea(document.getElementById("codeArea"), {
         mode: "javascript",
         lineNumbers: true,
         autoIndent: true,
-        autoCloseBrackets: true,
+        autoCloseBrackets: isAutoCloseBracketsEnabled,
         matchBrackets: true,
         theme: "default"
     })
@@ -23,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const themeSelect = document.getElementById("themeSelect")
-    const autoCloseBrackets = document.getElementById("autoCloseBrackets")
     const autoComplete = document.getElementById("autoComplete")
     const showLineNumbers = document.getElementById("showLineNumbers")
 
@@ -31,8 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
         codeMirror.setOption("theme", themeSelect.value)
     })
 
+    const autoCloseBrackets = document.getElementById("autoCloseBrackets");
+    autoCloseBrackets.checked = isAutoCloseBracketsEnabled;
+
+
     autoCloseBrackets.addEventListener("change", () => {
-        codeMirror.setOption("autoCloseBrackets", autoCloseBrackets.checked)
+        codeMirror.setOption("autoCloseBrackets", autoCloseBrackets.checked);
+        localStorage.setItem('autoCloseBrackets', autoCloseBrackets.checked.toString());
     })
 
     showLineNumbers.addEventListener("change", () => {
