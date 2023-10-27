@@ -17,6 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
         theme: "default"
     })
 
+    const savedCode = localStorage.getItem('code')
+    if(savedCode !== null){
+        codeMirror.setValue(savedCode)
+    }
+
     const themeSelect = document.getElementById("themeSelect")
     const autoCloseBrackets = document.getElementById("autoCloseBrackets")
     const autoComplete = document.getElementById("autoComplete")
@@ -50,8 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const result = new Function(code)
             result()
         } catch (error) {
-            console.log("Error:", error)
-
             consoleArea.textContent += "Console:\nError: " + error + "\n"
         }
     })
@@ -79,5 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    codeMirror.on('change', () => {
+        const code = codeMirror.getValue()
+        localStorage.setItem('code', code)
+    })
 
 })
