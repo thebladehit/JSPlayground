@@ -9,7 +9,9 @@ const { PORT } = require('./config/config.js');
 const allowedUrlPath = {
   '/': path.resolve(__dirname, '..', 'front', 'index.html'),
   '/script.js': path.resolve(__dirname, '..', 'front', 'script.js'),
-  '/style.css': path.resolve(__dirname, '..', 'front', 'style.css'),
+  '/base.css': path.resolve(__dirname, '..', 'front', 'base.css'),
+  '/dark-theme.css': path.resolve(__dirname, '..', 'front', 'dark-theme.css'),
+  '/light-theme.css': path.resolve(__dirname, '..', 'front', 'light-theme.css'),
   '/logo.png': path.resolve(__dirname, '..', 'res', 'logo.png'),
   '/logo.ico': path.resolve(__dirname, '..', 'res', 'logo.ico'),
   '/gitIcon.png': path.resolve(__dirname, '..', 'res', 'gitIcon.png'),
