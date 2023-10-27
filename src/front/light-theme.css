@@ -1,0 +1,50 @@
+/*header*/
+
+header {
+    background-color: black;
+    color: #fff;
+}
+
+.header-text {
+    color: #f2f2f2;
+}
+
+.settings-button {
+    background-color: transparent;
+    color: #f2f2f2;
+}
+
+.settings-button:hover {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+.menu-content {
+    background-color: #f2f2f2;
+    color: black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/*fields*/
+
+#consoleArea{
+    border: 1px solid #a49f9f;
+}
+
+.codeAreaContainer{
+    border: 1px solid #a49f9f;
+}
+
+/*buttons*/
+
+.clrBtn {
+    background-color: black;
+    color: #f2f2f2;
+}
+
+/*footer*/
+
+footer {
+    background-color: black;
+    color: #f2f2f2;
+}

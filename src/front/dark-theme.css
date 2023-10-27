@@ -1,0 +1,87 @@
+/*header*/
+
+body {
+  background-color: #2c2c2c;
+}
+
+header {
+  background-color: black;
+  color: #f2f2f2;
+}
+
+.header-text {
+  color: #f2f2f2;
+}
+
+.settings-button {
+  background-color: transparent;
+  color: #f2f2f2;
+}
+
+.settings-button:hover {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.menu-content {
+  background-color: #2c2c2c;
+  color: f2f2f2;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+select {
+  background-color: #393939;
+  color: #f2f2f2;
+  border: 1px solid #2c2c2c;
+  outline: none;
+}
+
+/*fields*/
+
+#consoleArea{
+  background-color: #393939;
+  color: #f2f2f2;
+  border: 1px solid #0f0f0f;
+}
+
+.codeAreaContainer{
+  border: 1px solid #0f0f0f;
+}
+
+.CodeMirror {
+  background-color: #393939 !important;
+  color: #f2f2f2 !important;
+  border-color: #2e2e2e !important;
+}
+
+.CodeMirror-gutter  {
+  background-color: #2e2e2e !important;
+}
+
+.CodeMirror-gutters {
+  border-color: #2e2e2e !important;
+}
+
+.CodeMirror-hints {
+  background-color: #2e2e2e !important;
+  border-color: #0f0f0f !important;
+
+}
+
+.CodeMirror-hint {
+  color: #f2f2f2 !important;
+  
+}
+/*buttons*/
+
+.clrBtn {
+  background-color: black;
+  color: #f2f2f2;
+}
+
+/*footer*/
+
+footer {
+  background-color: black;
+  color: #f2f2f2;
+}
