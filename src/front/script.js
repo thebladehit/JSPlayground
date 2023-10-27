@@ -92,16 +92,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const layoutContainer = document.querySelector('.layout-container');
     const buttonContainer = document.querySelector('.button-container')
 
-    orientationSelect.addEventListener('change', (e) => {
-        const selectedOrientation = e.target.value;
+    const applyOrientation = (orientation) => {
+        ['vertical', 'horizontal', 'oneandhalf'].forEach((availableOrientation) => {
+            const isCurrentOrientation = orientation === availableOrientation;
 
-        ['vertical', 'horizontal', 'oneandhalf'].forEach((orientation) => {
-            const isCurrentOrientation = orientation === selectedOrientation;
-
-            layoutContainer.classList.toggle(orientation, isCurrentOrientation);
-            buttonContainer.classList.toggle(orientation, isCurrentOrientation);
+            layoutContainer.classList.toggle(availableOrientation, isCurrentOrientation);
+            buttonContainer.classList.toggle(availableOrientation, isCurrentOrientation);
         });
+
+        orientationSelect.value = orientation;
+        localStorage.setItem('orientation', orientation);
+    }
+
+    orientationSelect.addEventListener('change', (e) => {
+        applyOrientation(e.target.value);
     });
+
+    const savedOrientation = localStorage.getItem('orientation') || 'vertical';
+    applyOrientation(savedOrientation);
 
     codeMirror.on('change', () => {
         const code = codeMirror.getValue()
