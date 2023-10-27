@@ -148,8 +148,8 @@ header img {
   box-sizing: border-box;
 }
 
-#orientationSelect{
-  margin: 5px;
+select {
+  margin-bottom: 5px;
 }
 
 /*buttons*/

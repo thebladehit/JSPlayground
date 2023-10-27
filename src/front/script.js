@@ -8,6 +8,23 @@ document.addEventListener("DOMContentLoaded", () => {
         consoleArea.textContent += "Console: " + msg + "\n"
     }
 
+    const styleLink = document.querySelector('#pageTheme');
+
+    const pageThemeSelect = document.querySelector('#pageThemeSelect');
+
+    const applyPageTheme = (theme) => {
+        pageThemeSelect.value = theme;
+        styleLink.setAttribute('href', `${theme}.css`);
+    }
+
+    pageThemeSelect.addEventListener('change', (e) => {
+        applyPageTheme(e.target.value);
+        localStorage.setItem('pageTheme', e.target.value);
+    });
+
+    const pageTheme = localStorage.getItem('pageTheme') ?? 'light-theme';
+    applyPageTheme(pageTheme);
+
     const autoCloseBracketsSetting = localStorage.getItem('autoCloseBrackets');
     const isAutoCloseBracketsEnabled = autoCloseBracketsSetting !== 'false';
 
@@ -28,20 +45,20 @@ document.addEventListener("DOMContentLoaded", () => {
         codeMirror.setValue(savedCode)
     }
 
-    const themeSelect = document.getElementById("themeSelect");
+    const editorThemeSelect = document.getElementById("editorThemeSelect");
 
-    const applyTheme = (theme) => {
+    const applyEditorTheme = (theme) => {
         codeMirror.setOption("theme", theme);
-        themeSelect.value = theme;
-        localStorage.setItem('theme', theme);
+        editorThemeSelect.value = theme;
+        localStorage.setItem('editorTheme', theme);
     };
 
-    themeSelect.addEventListener("change", () => {
-        applyTheme(themeSelect.value);
+    editorThemeSelect.addEventListener("change", () => {
+        applyEditorTheme(editorThemeSelect.value);
     });
 
-    const savedTheme = localStorage.getItem('theme') || 'default';
-    applyTheme(savedTheme);
+    const savedTheme = localStorage.getItem('editorTheme') || 'default';
+    applyEditorTheme(savedTheme);
 
     const autoCloseBrackets = document.getElementById("autoCloseBrackets");
     autoCloseBrackets.checked = isAutoCloseBracketsEnabled;
@@ -121,8 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     applyOrientation(savedOrientation);
 
     codeMirror.on('change', () => {
-        const code = codeMirror.getValue()
-        localStorage.setItem('code', code)
-    })
-
+        const code = codeMirror.getValue();
+        localStorage.setItem('code', code);
+    });
 })
