@@ -7,7 +7,7 @@
 
     <link rel="icon" type="image/x-icon" href="logo.ico">
     <link rel="stylesheet" type="text/css" href="base.css">
-    <link rel="stylesheet" type="text/css" href="light-theme.css">
+    <link rel="stylesheet" type="text/css" id="pageTheme" href="light-theme.css">
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
@@ -48,12 +48,19 @@
                 </select>
             </div>
             <div>
-                <label for="themeSelect">Theme:</label>
-                <select id="themeSelect">
+                <label for="editorThemeSelect">Editor theme:</label>
+                <select id="editorThemeSelect">
                     <option value="default" >Default</option>
                     <option value="eclipse">Eclipse</option>
                     <option value="idea">Idea</option>
                     <option value="juejin">Juejin</option>
+                </select>
+            </div>
+            <div>
+                <label for="pageThemeSelect">Page theme:</label>
+                <select id="pageThemeSelect">
+                    <option value="light-theme">Light</option>
+                    <option value="dark-theme">Dark</option>
                 </select>
             </div>
             <div>
