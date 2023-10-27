@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const themeSelect = document.getElementById("themeSelect")
-    const autoComplete = document.getElementById("autoComplete")
 
     themeSelect.addEventListener("change", () => {
         codeMirror.setOption("theme", themeSelect.value)
@@ -52,9 +51,18 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem('lineNumbers', showLineNumbers.checked.toString())
     })
 
-    const toggleAutoComplete = () => codeMirror[autoComplete.checked ? 'on' : 'off']("inputRead", autoCompleteHandler);
-    const autoCompleteHandler = (instance) => CodeMirror.commands.autocomplete(instance, null, {completeSingle: false});
+    const autoCompleteSetting = localStorage.getItem('autoComplete');
+    const isAutoCompleteEnabled = autoCompleteSetting !== 'false';
+    const autoComplete = document.getElementById("autoComplete");
 
+    autoComplete.checked = isAutoCompleteEnabled;
+
+    const toggleAutoComplete = () => {
+        codeMirror[autoComplete.checked ? 'on' : 'off']("inputRead", autoCompleteHandler);
+        localStorage.setItem('autoComplete', autoComplete.checked.toString());
+    };
+
+    const autoCompleteHandler = (instance) => CodeMirror.commands.autocomplete(instance, null, { completeSingle: false });
     autoComplete.addEventListener("change", toggleAutoComplete);
     toggleAutoComplete();
 
