@@ -28,11 +28,20 @@ document.addEventListener("DOMContentLoaded", () => {
         codeMirror.setValue(savedCode)
     }
 
-    const themeSelect = document.getElementById("themeSelect")
+    const themeSelect = document.getElementById("themeSelect");
+
+    const applyTheme = (theme) => {
+        codeMirror.setOption("theme", theme);
+        themeSelect.value = theme;
+        localStorage.setItem('theme', theme);
+    };
 
     themeSelect.addEventListener("change", () => {
-        codeMirror.setOption("theme", themeSelect.value)
-    })
+        applyTheme(themeSelect.value);
+    });
+
+    const savedTheme = localStorage.getItem('theme') || 'default';
+    applyTheme(savedTheme);
 
     const autoCloseBrackets = document.getElementById("autoCloseBrackets");
     autoCloseBrackets.checked = isAutoCloseBracketsEnabled;
