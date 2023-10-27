@@ -11,9 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const autoCloseBracketsSetting = localStorage.getItem('autoCloseBrackets');
     const isAutoCloseBracketsEnabled = autoCloseBracketsSetting !== 'false';
 
+    const lineNumbersSetting = localStorage.getItem('lineNumbers');
+    const isLineNumbersEnabled = lineNumbersSetting !== 'false';
+
     const codeMirror = CodeMirror.fromTextArea(document.getElementById("codeArea"), {
         mode: "javascript",
-        lineNumbers: true,
+        lineNumbers: isLineNumbersEnabled,
         autoIndent: true,
         autoCloseBrackets: isAutoCloseBracketsEnabled,
         matchBrackets: true,
@@ -27,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const themeSelect = document.getElementById("themeSelect")
     const autoComplete = document.getElementById("autoComplete")
-    const showLineNumbers = document.getElementById("showLineNumbers")
 
     themeSelect.addEventListener("change", () => {
         codeMirror.setOption("theme", themeSelect.value)
@@ -42,8 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem('autoCloseBrackets', autoCloseBrackets.checked.toString());
     })
 
+    const showLineNumbers = document.getElementById("showLineNumbers")
+    showLineNumbers.checked = isLineNumbersEnabled
+
     showLineNumbers.addEventListener("change", () => {
         codeMirror.setOption("lineNumbers", showLineNumbers.checked)
+        localStorage.setItem('lineNumbers', showLineNumbers.checked.toString())
     })
 
     const toggleAutoComplete = () => codeMirror[autoComplete.checked ? 'on' : 'off']("inputRead", autoCompleteHandler);
