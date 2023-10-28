@@ -92,6 +92,17 @@ document.addEventListener("DOMContentLoaded", () => {
     autoComplete.addEventListener("change", toggleAutoComplete);
     toggleAutoComplete();
 
+    const setToDefault = document.getElementById("setToDefault")
+
+    setToDefault.addEventListener('click', () =>{
+       localStorage.clear()
+        location.reload()
+        setToDefault.textContent = 'Done!'
+        setTimeout(() =>{
+            setToDefault.textContent = 'Set to default'
+        }, 1000)
+    });
+
     const runBtn = document.getElementById("runButton");
     const clearCodeBtn = document.getElementById("clearCodeButton");
     const clearConsoleBtn = document.getElementById("clearConsoleButton");
@@ -152,4 +163,23 @@ document.addEventListener("DOMContentLoaded", () => {
         const code = codeMirror.getValue();
         localStorage.setItem('code', code);
     });
+
+    const slider = document.getElementById('font-slider')
+    const sliderValue = document.getElementById('font-value')
+    const codeMirrorStyles = document.querySelector('.CodeMirror');
+    const savedFontSize = localStorage.getItem('fontSize') || '20';
+
+    slider.value = savedFontSize;
+    sliderValue.innerHTML = savedFontSize + 'px';
+    consoleArea.style.fontSize = savedFontSize + 'px';
+    codeMirrorStyles.style.fontSize = savedFontSize + 'px';
+
+    slider.addEventListener('input', () =>{
+        sliderValue.innerHTML = slider.value + 'px'
+
+        consoleArea.style.fontSize = slider.value + 'px'
+        codeMirrorStyles.style.fontSize = slider.value + 'px'
+
+        localStorage.setItem('fontSize', slider.value)
+    })
 })
