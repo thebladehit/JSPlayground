@@ -152,4 +152,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const code = codeMirror.getValue();
         localStorage.setItem('code', code);
     });
+
+    const slider = document.getElementById('font-slider')
+    const sliderValue = document.getElementById('font-value')
+
+    const codeMirrorStyles = document.querySelector('.CodeMirror');
+
+    sliderValue.innerHTML = slider.value
+
+    slider.addEventListener('input', () =>{
+        sliderValue.innerHTML = slider.value + 'px'
+        consoleArea.style.fontSize = slider.value + 'px'
+        codeMirrorStyles.style.fontSize = slider.value + 'px'
+    })
 })
