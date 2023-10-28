@@ -64,6 +64,32 @@ header img {
   display: block;
 }
 
+.setToDefault{
+  margin-top: 12px;
+  text-align: center;
+}
+
+#setToDefault{
+  background-color: black;
+  color: #f2f2f2;
+  border-radius: 4px;
+  border-style: none;
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1.5;
+  padding: 6px 15px;
+  text-align: center;
+  user-select: none;
+  touch-action: manipulation;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 10;
+}
+
+#setToDefault:hover,
+#setToDefault:focus {
+  opacity: .75;
+}
+
 /*fields*/
 
 .layout-container {

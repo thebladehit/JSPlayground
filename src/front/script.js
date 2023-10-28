@@ -92,6 +92,17 @@ document.addEventListener("DOMContentLoaded", () => {
     autoComplete.addEventListener("change", toggleAutoComplete);
     toggleAutoComplete();
 
+    const setToDefault = document.getElementById("setToDefault")
+
+    setToDefault.addEventListener('click', () =>{
+       localStorage.clear()
+        location.reload()
+        setToDefault.textContent = 'Done!'
+        setTimeout(() =>{
+            setToDefault.textContent = 'Set to default'
+        }, 1000)
+    });
+
     const runBtn = document.getElementById("runButton");
     const clearCodeBtn = document.getElementById("clearCodeButton");
     const clearConsoleBtn = document.getElementById("clearConsoleButton");
