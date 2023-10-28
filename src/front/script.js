@@ -69,12 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem('autoCloseBrackets', autoCloseBrackets.checked.toString());
     })
 
-    const showLineNumbers = document.getElementById("showLineNumbers")
-    showLineNumbers.checked = isLineNumbersEnabled
+    const showLineNumbers = document.getElementById("showLineNumbers");
+    showLineNumbers.checked = isLineNumbersEnabled;
 
     showLineNumbers.addEventListener("change", () => {
-        codeMirror.setOption("lineNumbers", showLineNumbers.checked)
-        localStorage.setItem('lineNumbers', showLineNumbers.checked.toString())
+        codeMirror.setOption("lineNumbers", showLineNumbers.checked);
+        localStorage.setItem('lineNumbers', showLineNumbers.checked.toString());
     })
 
     const autoCompleteSetting = localStorage.getItem('autoComplete');
@@ -92,9 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
     autoComplete.addEventListener("change", toggleAutoComplete);
     toggleAutoComplete();
 
-    const runBtn = document.getElementById("runButton")
-    const clearCodeBtn = document.getElementById("clearCodeButton")
-    const clearConsoleBtn = document.getElementById("clearConsoleButton")
+    const runBtn = document.getElementById("runButton");
+    const clearCodeBtn = document.getElementById("clearCodeButton");
+    const clearConsoleBtn = document.getElementById("clearConsoleButton");
 
     runBtn.addEventListener("click", () => {
         const code = codeMirror.getValue()
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const orientationSelect = document.getElementById('orientationSelect');
     const layoutContainer = document.querySelector('.layout-container');
-    const buttonContainer = document.querySelector('.button-container')
+    const buttonContainer = document.querySelector('.button-container');
 
     const applyOrientation = (orientation) => {
         ['vertical', 'horizontal', 'oneandhalf'].forEach((availableOrientation) => {
@@ -136,6 +136,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const savedOrientation = localStorage.getItem('orientation') || 'vertical';
     applyOrientation(savedOrientation);
+
+    const copyButton = document.getElementById("copyButton");
+    copyButton.addEventListener("click", () => {
+        const code = codeMirror.getValue();
+        navigator.clipboard.writeText(code).then(() => {
+            copyButton.textContent = 'Copied!'
+            setTimeout(() =>{
+                copyButton.textContent = 'Copy'
+            }, 1000)
+        })
+    });
 
     codeMirror.on('change', () => {
         const code = codeMirror.getValue();

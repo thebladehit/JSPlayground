@@ -32,6 +32,7 @@ header {
 }
 
 .codeAreaContainer{
+    position: relative;
     border: 1px solid #a49f9f;
 }
 
