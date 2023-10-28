@@ -155,14 +155,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const slider = document.getElementById('font-slider')
     const sliderValue = document.getElementById('font-value')
-
     const codeMirrorStyles = document.querySelector('.CodeMirror');
+    const savedFontSize = localStorage.getItem('fontSize') || '20';
 
-    sliderValue.innerHTML = slider.value
+    slider.value = savedFontSize;
+    sliderValue.innerHTML = savedFontSize + 'px';
+    consoleArea.style.fontSize = savedFontSize + 'px';
+    codeMirrorStyles.style.fontSize = savedFontSize + 'px';
 
     slider.addEventListener('input', () =>{
         sliderValue.innerHTML = slider.value + 'px'
+
         consoleArea.style.fontSize = slider.value + 'px'
         codeMirrorStyles.style.fontSize = slider.value + 'px'
+
+        localStorage.setItem('fontSize', slider.value)
     })
 })
