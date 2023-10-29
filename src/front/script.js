@@ -106,9 +106,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const setToDefault = document.getElementById("setToDefault")
 
     setToDefault.addEventListener('click', () =>{
-       localStorage.clear()
+        const propertyToKeep = localStorage.getItem('code');
+
+        localStorage.clear()
+
+        if (propertyToKeep !== null){
+            localStorage.setItem('code', propertyToKeep)
+        }
+
         location.reload()
+
         setToDefault.textContent = 'Done!'
+
         setTimeout(() =>{
             setToDefault.textContent = 'Set to default'
         }, 1000)
