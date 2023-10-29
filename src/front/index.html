@@ -1,108 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Playground</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JS Playground</title>
 
-    <link rel="icon" type="image/x-icon" href="logo.ico">
-    <link rel="stylesheet" type="text/css" href="base.css">
-    <link rel="stylesheet" type="text/css" id="pageTheme" href="light-theme.css">
+        <link rel="icon" type="image/x-icon" href="logo.ico" />
+        <link rel="stylesheet" type="text/css" href="base.css" />
+        <link rel="stylesheet" type="text/css" id="pageTheme" href="light-theme.css" />
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/show-hint.min.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/show-hint.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/eclipse.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/idea.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/juejin.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/dracula.min.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/eclipse.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/idea.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/juejin.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/dracula.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/closebrackets.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/matchbrackets.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/closebrackets.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/matchbrackets.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/javascript-hint.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/show-hint.min.js"></script>
-
-</head>
-<body>
-<header>
-    <div class="logo-container">
-        <img src="logo.png" alt="logo">
-    </div>
-    <div class="header-text">
-        <h1>JS Playground</h1>
-    </div>
-
-    <div class="settings-menu">
-        <button class="settings-button">Settings</button>
-        <div class="menu-content">
-            <div>
-                <label for="orientationSelect">Orientation:</label>
-                <select id="orientationSelect">
-                    <option value="vertical">50/50 Vertical</option>
-                    <option value="horizontal" >50/50 Horizontal</option>
-                    <option value="oneandhalf" >70/30 Vertical</option>
-                </select>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/javascript-hint.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/show-hint.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="logo-container">
+                <img src="logo.png" alt="logo" />
             </div>
-            <div>
-                <label for="editorThemeSelect">Editor theme:</label>
-                <select id="editorThemeSelect">
-                    <option value="default" >Default</option>
-                    <option value="eclipse">Eclipse</option>
-                    <option value="idea">Idea</option>
-                    <option value="juejin">Juejin</option>
-                </select>
+            <div class="header-text">
+                <h1>JS Playground</h1>
             </div>
-            <div>
-                <label for="pageThemeSelect">Page theme:</label>
-                <select id="pageThemeSelect">
-                    <option value="light-theme">Light</option>
-                    <option value="dark-theme">Dark</option>
-                    <option value="os-theme">OS</option>
-                </select>
+
+            <div class="settings-menu">
+                <button class="settings-button">Settings</button>
+                <div class="menu-content">
+                    <div>
+                        <label for="orientationSelect">Orientation:</label>
+                        <select id="orientationSelect">
+                            <option value="vertical">50/50 Vertical</option>
+                            <option value="horizontal">50/50 Horizontal</option>
+                            <option value="oneandhalf">70/30 Vertical</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="editorThemeSelect">Editor theme:</label>
+                        <select id="editorThemeSelect">
+                            <option value="default">Default</option>
+                            <option value="eclipse">Eclipse</option>
+                            <option value="idea">Idea</option>
+                            <option value="juejin">Juejin</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="pageThemeSelect">Page theme:</label>
+                        <select id="pageThemeSelect">
+                            <option value="light-theme">Light</option>
+                            <option value="dark-theme">Dark</option>
+                            <option value="os-theme">OS</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" id="autoCloseBrackets" checked />
+                            Auto close brackets
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" id="autoComplete" checked />
+                            Auto complete
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" id="showLineNumbers" checked />
+                            Show line numbers
+                        </label>
+                    </div>
+                    <div class="setToDefault">
+                        <button id="setToDefault">Set to default</button>
+                    </div>
+                </div>
             </div>
-            <div>
-                <label><input type="checkbox" id="autoCloseBrackets" checked> Auto close brackets</label>
+        </header>
+
+        <div class="layout-container vertical">
+            <div class="codeAreaContainer">
+                <textarea id="codeArea"></textarea>
+                <button id="copyButton" class="copy-btn">Copy</button>
             </div>
-            <div>
-                <label><input type="checkbox" id="autoComplete" checked> Auto complete</label>
-            </div>
-            <div>
-                <label><input type="checkbox" id="showLineNumbers" checked> Show line numbers</label>
-            </div>
-            <div class="setToDefault">
-                <button id="setToDefault">Set to default</button>
-            </div>
+            <pre id="consoleArea"></pre>
         </div>
-    </div>
 
-</header>
+        <div class="button-container vertical">
+            <button class="clrBtn" id="runButton">Run</button>
+            <button class="clrBtn" id="clearCodeButton">Clear code area</button>
+            <button class="clrBtn" id="clearConsoleButton">Clear console</button>
+        </div>
 
-
-<div class="layout-container vertical">
-<div class="codeAreaContainer">
-    <textarea id="codeArea"></textarea>
-    <button id="copyButton" class="copy-btn">Copy</button>
-</div>
-    <pre id="consoleArea"></pre>
-</div>
-
-<div class="button-container vertical">
-    <button class="clrBtn" id="runButton">Run</button>
-    <button class="clrBtn" id="clearCodeButton">Clear code area</button>
-    <button class="clrBtn" id="clearConsoleButton">Clear console</button>
-</div>
-
-<footer>
-    <div class="footer-banka"><a href="https://send.monobank.ua/jar/ATcjAVGpYV" target="_blank" rel="noreferrer noopener nofollow"><img src="monoBanka.png" alt="bankaIcon"></a></div>
-    <div class="footer-text"> © 2023 JS Playground. All rights reserved. </div>
-    <div class="footer-gitIcon">
-        <a href="https://github.com/thebaldehit/JSPlayground/graphs/contributors" target="_blank"><img src="gitIcon.png" alt="gitIcon"></a>
-    </div>
-</footer>
-<script src="script.js"></script>
-</body>
+        <footer>
+            <div class="footer-banka">
+                <a href="https://send.monobank.ua/jar/ATcjAVGpYV" target="_blank" rel="noreferrer noopener nofollow"><img src="monoBanka.png" alt="bankaIcon" /></a>
+            </div>
+            <div class="footer-text">© 2023 JS Playground. All rights reserved.</div>
+            <div class="footer-gitIcon">
+                <a href="https://github.com/thebaldehit/JSPlayground/graphs/contributors" target="_blank"><img src="gitIcon.png" alt="gitIcon" /></a>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
 </html>
