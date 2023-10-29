@@ -268,16 +268,6 @@ p {
     padding-left: 13%;
 }
 
-.copy-trigger {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  z-index: 5;
-}
-
 .copy-btn {
   position: absolute;
   top: 0;
@@ -300,8 +290,7 @@ p {
   z-index: 10;
 }
 
-.copy-trigger:hover + .copy-btn,
-.copy-btn:hover {
+.codeAreaContainer.hovered .copy-btn {
   opacity: 1;
   visibility: visible;
 }

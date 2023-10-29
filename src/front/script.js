@@ -106,9 +106,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const setToDefault = document.getElementById("setToDefault")
 
     setToDefault.addEventListener('click', () =>{
-       localStorage.clear()
+        const propertyToKeep = localStorage.getItem('code');
+
+        localStorage.clear()
+
+        if (propertyToKeep !== null){
+            localStorage.setItem('code', propertyToKeep)
+        }
+
         location.reload()
+
         setToDefault.textContent = 'Done!'
+
         setTimeout(() =>{
             setToDefault.textContent = 'Set to default'
         }, 1000)
@@ -177,6 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const slider = document.getElementById('font-slider')
     const sliderValue = document.getElementById('font-value')
+    const lineNumbersSize = document.querySelector('.CodeMirror-linenumbers')
     const codeMirrorStyles = document.querySelector('.CodeMirror');
     const savedFontSize = localStorage.getItem('fontSize') || '20';
 
@@ -188,9 +198,31 @@ document.addEventListener("DOMContentLoaded", () => {
     slider.addEventListener('input', () =>{
         sliderValue.innerHTML = slider.value + 'px'
 
+        lineNumbersSize.style.fontSize = slider.value + 'px'
         consoleArea.style.fontSize = slider.value + 'px'
         codeMirrorStyles.style.fontSize = slider.value + 'px'
 
         localStorage.setItem('fontSize', slider.value)
     })
+
+    let hoverTimer;
+
+    codeMirrorStyles.addEventListener('mouseover', function() {
+        clearTimeout(hoverTimer);
+        document.querySelector('.codeAreaContainer').classList.add('hovered');
+    });
+
+    codeMirrorStyles.addEventListener('mouseout', function() {
+        hoverTimer = setTimeout(() => {
+            document.querySelector('.codeAreaContainer').classList.remove('hovered');
+        }, 500);
+    });
+
+    copyButton.addEventListener('mouseover', function() {
+        clearTimeout(hoverTimer);
+    });
+
+    copyButton.addEventListener('mouseout', function() {
+        document.querySelector('.codeAreaContainer').classList.remove('hovered');
+    });
 })
