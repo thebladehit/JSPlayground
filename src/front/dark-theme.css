@@ -38,6 +38,38 @@ select {
 
 /*fields*/
 
+#consoleArea::-webkit-scrollbar {
+  background-color: #2e2e2e;
+}
+
+#consoleArea::-webkit-scrollbar-thumb {
+  background-color: #0f0f0f;
+}
+
+#consoleArea::-webkit-scrollbar-corner {
+  background-color: #2e2e2e;
+}
+
+.CodeMirror-hscrollbar::-webkit-scrollbar {
+  background-color: #2e2e2e !important;
+}
+
+.CodeMirror-hscrollbar::-webkit-scrollbar-thumb {
+  background-color: #0f0f0f !important;
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar {
+  background-color: #2e2e2e !important;
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar-thumb {
+  background-color: #0f0f0f !important;
+}
+
+.CodeMirror-scrollbar-filler {
+  background-color: #2e2e2e !important;
+}
+
 #consoleArea{
   background-color: #393939;
   color: #f2f2f2;
@@ -66,7 +98,6 @@ select {
 .CodeMirror-hints {
   background-color: #2e2e2e !important;
   border-color: #0f0f0f !important;
-
 }
 
 .CodeMirror-hint {
