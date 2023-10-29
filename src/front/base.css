@@ -7,7 +7,7 @@ body {
 /*header*/
 
 @media (max-width: 700px) {
-  .header-text{
+  .header-text {
     display: none;
   }
 }
@@ -27,8 +27,8 @@ header {
 }
 
 header img {
-    height: 100%;
-    margin-right: 10px;
+  height: 100%;
+  margin-right: 10px;
 }
 
 .header-text {
@@ -48,7 +48,9 @@ header img {
   font-size: 16px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .menu-content {
@@ -64,12 +66,12 @@ header img {
   display: block;
 }
 
-.setToDefault{
+.setToDefault {
   margin-top: 12px;
   text-align: center;
 }
 
-#setToDefault{
+#setToDefault {
   background-color: black;
   color: #f2f2f2;
   border-radius: 4px;
@@ -81,13 +83,15 @@ header img {
   text-align: center;
   user-select: none;
   touch-action: manipulation;
-  transition: opacity 0.3s, visibility 0.3s;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
   z-index: 10;
 }
 
 #setToDefault:hover,
 #setToDefault:focus {
-  opacity: .75;
+  opacity: 0.75;
 }
 
 /*fields*/
@@ -99,12 +103,13 @@ header img {
   margin: 10px 10px 0 10px;
 }
 
-.codeAreaContainer, #consoleArea {
+.codeAreaContainer,
+#consoleArea {
   margin: 0;
   padding: 0;
 }
 
-#consoleArea{
+#consoleArea {
   box-sizing: border-box;
   padding: 10px;
   height: 320px;
@@ -112,7 +117,7 @@ header img {
   font-size: 20px;
 }
 
-.codeAreaContainer{
+.codeAreaContainer {
   box-sizing: border-box;
 }
 
@@ -120,12 +125,14 @@ header img {
   flex-direction: row;
 }
 
-.codeAreaContainer, #consoleArea {
+.codeAreaContainer,
+#consoleArea {
   flex: 1;
   overflow: auto;
 }
 
-.codeAreaContainer, #consoleArea {
+.codeAreaContainer,
+#consoleArea {
   height: 100%;
 }
 
@@ -160,7 +167,6 @@ header img {
 .layout-container.oneandhalf {
   flex-direction: row;
 }
-
 
 .layout-container.oneandhalf .codeAreaContainer {
   flex: 1.5;
@@ -205,20 +211,20 @@ select {
 
 .clrBtn:hover,
 .clrBtn:focus {
-    opacity: .75;
+  opacity: 0.75;
 }
 
 .button-container.horizontal {
-    text-align: center;
+  text-align: center;
 }
 
 .button-container.vertical {
-    text-align: center;
+  text-align: center;
 }
 
 .button-container.oneandhalf {
-    text-align: left;
-    padding-left: 13%;
+  text-align: left;
+  padding-left: 13%;
 }
 
 .copy-btn {
@@ -239,7 +245,9 @@ select {
   touch-action: manipulation;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
   z-index: 10;
 }
 
@@ -263,23 +271,23 @@ footer {
   box-sizing: border-box;
 }
 
-.footer-gitIcon{
+.footer-gitIcon {
   height: 100%;
   justify-self: end;
 }
 
-.footer-text{
+.footer-text {
   flex-grow: 1;
 }
 
-.footer-banka{
+.footer-banka {
   height: 100%;
 }
 
-.footer-banka img{
+.footer-banka img {
   height: 100%;
 }
 
-.footer-gitIcon img{
+.footer-gitIcon img {
   height: 100%;
 }
