@@ -31,7 +31,7 @@ http://localhost:3000/
 You're ready to start coding! Simply enter your JavaScript code in the editor and click the "Run" button to see the results in the output panel.
 
 ## Features
-* Ability to add auto compliting.
+* Ability to add autofill.
 * Ability to change view of code area.
 * A simple and intuitive user interface.
 * Live code editor with auto close brackets.
