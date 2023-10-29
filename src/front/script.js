@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    
-
     const realConsole = console.log
 
     const consoleArea = document.getElementById("consoleArea")
@@ -184,26 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem('code', code);
     });
 
-    const slider = document.getElementById('font-slider')
-    const sliderValue = document.getElementById('font-value')
-    const lineNumbersSize = document.querySelector('.CodeMirror-linenumbers')
     const codeMirrorStyles = document.querySelector('.CodeMirror');
-    const savedFontSize = localStorage.getItem('fontSize') || '20';
-
-    slider.value = savedFontSize;
-    sliderValue.innerHTML = savedFontSize + 'px';
-    consoleArea.style.fontSize = savedFontSize + 'px';
-    codeMirrorStyles.style.fontSize = savedFontSize + 'px';
-
-    slider.addEventListener('input', () =>{
-        sliderValue.innerHTML = slider.value + 'px'
-
-        lineNumbersSize.style.fontSize = slider.value + 'px'
-        consoleArea.style.fontSize = slider.value + 'px'
-        codeMirrorStyles.style.fontSize = slider.value + 'px'
-
-        localStorage.setItem('fontSize', slider.value)
-    })
 
     let hoverTimer;
 
