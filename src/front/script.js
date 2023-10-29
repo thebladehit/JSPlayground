@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const pageTheme = localStorage.getItem('pageTheme') ?? 'os-theme';
     const savedCode = localStorage.getItem('code');
-    const savedTheme = localStorage.getItem('editorTheme') || 'default';
+    const savedTheme = localStorage.getItem('editorTheme') || 'juejin';
     const savedOrientation = localStorage.getItem('orientation') || 'vertical';
     const lineNumbersSetting = localStorage.getItem('lineNumbers');
     const autoCompleteSetting = localStorage.getItem('autoComplete');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         autoIndent: true,
         autoCloseBrackets: isAutoCloseBracketsEnabled,
         matchBrackets: true,
-        theme: 'default',
+        theme: 'juejin',
       },
     );
   
