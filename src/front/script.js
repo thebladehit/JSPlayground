@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+    
+
     const realConsole = console.log
 
     const consoleArea = document.getElementById("consoleArea")
@@ -14,7 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const applyPageTheme = (theme) => {
         pageThemeSelect.value = theme;
-        styleLink.setAttribute('href', `${theme}.css`);
+        if (theme === 'os-theme') {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                styleLink.setAttribute('href', 'dark-theme.css');
+            } else {
+                styleLink.setAttribute('href', 'light-theme.css');
+            }
+        } else {
+            styleLink.setAttribute('href', `${theme}.css`);
+        }
     }
 
     pageThemeSelect.addEventListener('change', (e) => {
@@ -22,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem('pageTheme', e.target.value);
     });
 
-    const pageTheme = localStorage.getItem('pageTheme') ?? 'light-theme';
+    const pageTheme = localStorage.getItem('pageTheme') ?? 'os-theme';
     applyPageTheme(pageTheme);
 
     const autoCloseBracketsSetting = localStorage.getItem('autoCloseBrackets');
