@@ -184,11 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('code', code);
     });
   
-    applyPageTheme(pageTheme);
-    applyEditorTheme(savedTheme);
-    applyOrientation(savedOrientation);
-    toggleAutoComplete();
-  
     if (savedCode !== null) {
       codeMirror.setValue(savedCode);
     }
@@ -196,5 +191,10 @@ document.addEventListener('DOMContentLoaded', () => {
     autoCloseBrackets.checked = isAutoCloseBracketsEnabled;
     showLineNumbers.checked = isLineNumbersEnabled;
     autoComplete.checked = isAutoCompleteEnabled;
+
+    applyPageTheme(pageTheme);
+    applyEditorTheme(savedTheme);
+    applyOrientation(savedOrientation);
+    toggleAutoComplete();
   });
   
