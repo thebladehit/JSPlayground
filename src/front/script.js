@@ -43,9 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let hoverTimer;
   
     const realConsole = console.log;
-    console.log = (msg) => {
-      realConsole(msg);
-      consoleArea.textContent += 'Console: ' + msg + '\n';
+    console.log = (...msg) => {
+      realConsole(...msg);
+      consoleArea.textContent += 'Console: ' + msg.join(', ') + '\n';
     };
   
     const applyPageTheme = (theme) => {
